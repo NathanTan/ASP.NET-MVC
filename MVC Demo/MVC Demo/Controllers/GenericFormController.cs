@@ -4,26 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MVC_Demo.Controllers
+namespace MVC_Demo.Models
 {
-    public class HomeController : Controller
+    public class GenericFormController : Controller
     {
+        // GET: GenericForm
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
