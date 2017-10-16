@@ -1,5 +1,5 @@
 ﻿@using MVC_Demo.Models
-@model FormModel
+@model IdentityModel
 @{
     ViewBag.Title = "GenericForm";
 }
@@ -8,14 +8,13 @@
 <h4>@ViewBag.Message</h4>
 
 <h6>Form:</h6>
-@using (Html.BeginForm("SubmitForm", "HomeControllers"))
+@using (Html.BeginForm("SubmitForm", "GenericForm", FormMethod.Post, new { } ))
 {
 
     <p>Name:</p>
-    @Html.TextBoxFor(m => m.name, new { @class = "form-controll" })
-
-
+    @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
 
     @Html.LabelFor(m => m.name, new { @class = "col-md-2 control-label" })
-    <input type="submit" class="btn btn-default" value="Sumbit" />
+
+    <input type="submit" class="btn btn-default" value="Submit" />
 }

@@ -29,26 +29,9 @@ namespace MVC_Demo.Controllers
             return View();
         }
 
-        public ActionResult GenericForm(FormModel model)
+        public ActionResult HeroRegistration()
         {
-            ViewBag.Message = "Please fill out the following form";
-
-            return View();
-        }
-
-        public ActionResult SubmitForm(FormModel model)
-        {
-
-            return View();
-        }
-
-
-        [HttpPost]
-        public ActionResult Submit(FormModel model)
-        {
-
-            // If we got this far, something failed, redisplay form
-            return View(model);
+            return RedirectToAction("Index", "Hero");
         }
     }
 }
