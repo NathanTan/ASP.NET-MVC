@@ -8,7 +8,7 @@
 <h4>@ViewBag.Message</h4>
 
 <h6>Form:</h6>
-@using (Html.BeginForm("SubmitForm", "GenericForm", FormMethod.Post, new { }))
+@using (Html.BeginForm("Submit", "Hero", FormMethod.Post, new { }))
 {
 
     @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
