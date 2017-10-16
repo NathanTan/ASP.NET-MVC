@@ -11,7 +11,9 @@ namespace MVC_Demo.Models
         // GET: GenericForm
         public ActionResult Index()
         {
-            return View();
+            var model = new FormModel();
+
+            return View(model);
         }
 
         public ActionResult GenericForm()
