@@ -14,11 +14,11 @@ namespace MVC_Demo.Models
             return View();
         }
 
+        [HttpPost]
         public ActionResult Submit(IdentityModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
             }
 
             return View("Index", model);
