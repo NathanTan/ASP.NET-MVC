@@ -18,33 +18,46 @@
 {
     <div>
         @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
-        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+        </div>
     </div>
     <div>
         @Html.LabelFor(m => m.HeroName, new { @class = "col-md-2 control-label" })
-        @Html.TextBoxFor(m => m.HeroName, new { @class = "form-control" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.HeroName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.HeroName, null, new { @class = "text-danger" })
+        </div>
     </div>
     <div>
         @Html.LabelFor(m => m.OriginCity, new { @class = "col-md-2 control-label" })
-        @Html.TextBoxFor(m => m.OriginCity, new { @class = "form-control" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.OriginCity, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.OriginCity, null, new { @class = "text-danger" })
+        </div>
     </div>
-    <div>
-        @Html.LabelFor(m => m.SideKickName, new { @class = "col-md-2 control-label" })
-        @Html.TextBoxFor(m => m.SideKickName, new { @class = "form-control" })
-    </div>
-    <div>
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-    </div>
-    <div>
-        @Html.LabelFor(m => m.Age, new { @class = "col-md-2 control-label" })
-        @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
-    </div>
-
-
-
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-
-    <input type="submit" class="btn btn-default" value="Submit" />
+        <div>
+            @Html.LabelFor(m => m.SideKickName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.SideKickName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.SideKickName, null, new { @class = "text-danger" })
+            </div>
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
+            </div>
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Age, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Age, null, new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <input type="submit" class="btn btn-default" value="Submit" />
 }

@@ -16,12 +16,13 @@ namespace MVC_Demo.Models
         [Display(Name = "Side Kick Name")]
         public string SideKickName { get; set; }
 
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
         [Required]
-        [Range(18, 9999999999, ErrorMessage = "Must be at least 18 to registar")]
+        [Range(18, 9999, ErrorMessage = "Must be at least 18 to registar")]
         public int Age { get; set; }
     }
 }
