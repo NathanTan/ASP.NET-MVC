@@ -2,12 +2,6 @@
 @model IdentityModel
 @{
     ViewBag.Title = "GenericForm";
-
-    if (IsPost)
-    {
-
-    }
-
 }
 
 <h2>Hero Registration</h2>
@@ -54,10 +48,13 @@
         <div>
             @Html.LabelFor(m => m.Age, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.Age, new { @class = "form-control" }) <!--Texbox for gives a generic input, but editor for will look at dataannotations to determine what to do-->
+                @Html.EditorFor(m => m.Age, new { @class = "form-control" })
                 @Html.ValidationMessageFor(m => m.Age, null, new { @class = "text-danger" })
             </div>
         </div>
         
         <input type="submit" class="btn btn-default" value="Submit" />
 }
+
+@Html.EditorForModel()
