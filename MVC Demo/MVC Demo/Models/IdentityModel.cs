@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace MVC_Demo.Models
 {
@@ -24,5 +26,15 @@ namespace MVC_Demo.Models
         [Required]
         [Range(18, 9999, ErrorMessage = "Must be at least 18 to registar")]
         public int Age { get; set; }
+
+        [Display(Name="THETHING")]
+        public TimeZonesModel Region2 { get; set; }
+
+
+        //[Required]
+        //[Display(Name="Time Zone Region")]
+        //public string Region { get; set; }
+
+        //public IEnumerable<SelectListItem> Regions { get; set; }
     }
 }

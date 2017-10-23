@@ -31,30 +31,40 @@
             @Html.ValidationMessageFor(m => m.OriginCity, null, new { @class = "text-danger" })
         </div>
     </div>
-        <div>
-            @Html.LabelFor(m => m.SideKickName, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(m => m.SideKickName, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.SideKickName, null, new { @class = "text-danger" })
-            </div>
+    <div>
+        @Html.LabelFor(m => m.SideKickName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.SideKickName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.SideKickName, null, new { @class = "text-danger" })
         </div>
-        <div>
-            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
-            </div>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
         </div>
-        <div>
-            @Html.LabelFor(m => m.Age, new { @class = "col-md-2 control-label" })
-            <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Age, new { @class = "form-control" }) <!--Texbox for gives a generic input, but editor for will look at dataannotations to determine what to do-->
-                @Html.EditorFor(m => m.Age, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.Age, null, new { @class = "text-danger" })
-            </div>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Age, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Age, new { @class = "form-control" }) <!--Texbox for gives a generic input, but editor for will look at dataannotations to determine what to do-->
+            @Html.EditorFor(m => m.Age, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Age, null, new { @class = "text-danger" })
         </div>
-        
+    </div>
+
+    @*<div>
+        @Html.LabelFor(m => m.Region, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.Region, Model.Regions, "- Please select your time zone -", new { @class = "form-control" })
+        </div>
+    </div>*@
         <input type="submit" class="btn btn-default" value="Submit" />
 }
 
-@Html.EditorForModel()
+@using (Html.BeginForm("Submit2", "Hero", FormMethod.Post, new { @class = "cls" }))
+{
+    @Html.EditorForModel()
+    <input type="submit" class="btn btn-default" value="Submit" />
+}
