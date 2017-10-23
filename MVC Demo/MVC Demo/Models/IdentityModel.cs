@@ -21,14 +21,19 @@ namespace MVC_Demo.Models
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
+        [UIHint("Email")]
         public string Email { get; set; }
 
         [Required]
         [Range(18, 9999, ErrorMessage = "Must be at least 18 to registar")]
+        [UIHint("Int32")]
         public int Age { get; set; }
 
-        [Display(Name="THETHING")]
-        public TimeZonesModel Region2 { get; set; }
+        [Required]
+        [Display(Name="Time Zone")]
+        [DisplayFormat(NullDisplayText = "(null value)")]
+        [UIHint("TimeZonesModel")]
+        public TimeZonesModel TimeZonesModel { get; set; }
 
 
         //[Required]
@@ -36,5 +41,12 @@ namespace MVC_Demo.Models
         //public string Region { get; set; }
 
         //public IEnumerable<SelectListItem> Regions { get; set; }
+    }
+
+    public class TimeZonesModel
+    {
+        public string Region { get; set; }
+
+        public IEnumerable<SelectListItem> Regions { get; set; }
     }
 }

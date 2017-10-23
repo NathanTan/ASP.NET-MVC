@@ -4,11 +4,13 @@
     ViewBag.Title = "GenericForm";
 }
 
+<link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+
 <h2>Hero Registration</h2>
 <h4>@ViewBag.Message</h4>
 
 <h6>Please enter the following information</h6>
-@using (Html.BeginForm("Submit", "Hero", FormMethod.Post, new { @class = "cls" }))
+@using (Html.BeginForm("Submit", "Hero", FormMethod.Post, new {}))
 {
     <div>
         @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
@@ -54,16 +56,19 @@
         </div>
     </div>
 
-    @*<div>
-        @Html.LabelFor(m => m.Region, new { @class = "col-md-2 control-label" })
+    @*<div class="dropdown">
+        @Html.LabelFor(m => m.TimeZonesModel.Region, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.Region, Model.Regions, "- Please select your time zone -", new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.TimeZonesModel.Region, Model.TimeZonesModel.Regions, "- Please select your time zone -", new { @class = "form-control" })
         </div>
     </div>*@
+
+    @Html.EditorFor(m => m.TimeZonesModel, new { })
+
         <input type="submit" class="btn btn-default" value="Submit" />
 }
-
-@using (Html.BeginForm("Submit2", "Hero", FormMethod.Post, new { @class = "cls" }))
+<h3>Editor For Model</h3>
+@using (Html.BeginForm("Submit2", "Hero", FormMethod.Post, new { }))
 {
     @Html.EditorForModel()
     <input type="submit" class="btn btn-default" value="Submit" />

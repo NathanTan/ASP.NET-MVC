@@ -1,0 +1,5 @@
+﻿
+@model System.Int32
+@Html.TextBoxFor(m => m, new { @class = "form-control", Style = "border-color: red;" })
+
+@Html.ValidationMessageFor(m => m, null, new { @class = "text-danger" })
