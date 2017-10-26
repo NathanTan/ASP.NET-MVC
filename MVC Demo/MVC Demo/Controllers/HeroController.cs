@@ -13,9 +13,7 @@ namespace MVC_Demo.Models
         {
             IdentityModel model = new IdentityModel();
             var regions = GetAllRegions();
-
-            model.TimeZonesModel = new TimeZonesModel();
-            model.TimeZonesModel.Regions = GetSelectListItems(regions);
+            
             return View(model);
         }
 

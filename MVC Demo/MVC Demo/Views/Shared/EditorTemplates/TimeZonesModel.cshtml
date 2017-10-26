@@ -1,8 +1,11 @@
 ﻿
-@model MVC_Demo.Models.TimeZonesModel
+@model String
+    @{ 
+        IEnumerable<SelectListItem> regions = ViewBag.PossibleRegions;
+    }
 <div class="dropdown">
-    @Html.LabelFor(m => m.Region, new { @class = "col-md-2 control-label" })
+    @Html.Label("", new { @class = "col-md-2 control-label" })
     <div class="col-md-10" name="News">
-        @Html.DropDownListFor(m => m.Region, Model.Regions, "- Please select your time zone -", new { @class = "form-control" })
+        @Html.DropDownList("", regions, "- Please select your time zone -", new { @class = "form-control" })
     </div>
 </div>
