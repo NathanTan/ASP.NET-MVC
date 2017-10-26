@@ -1,5 +1,5 @@
 ﻿@using MVC_Demo.Models
-@model IdentityModel
+@model IdentityViewModel
 @{
     ViewBag.Title = "GenericForm";
 }
@@ -65,7 +65,7 @@
     </div>*@
 
 
-
+    @Html.LabelFor(m => m.Region, new { @class = "col-md-2 control-label" })
     @Html.EditorFor(m => m.Region, new { PossibleRegions = Model.PossibleRegions })
 
         <input type="submit" class="btn btn-default" value="Submit" />

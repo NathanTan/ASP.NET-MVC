@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 namespace MVC_Demo.Models
 {
-    public class IdentityModel
+    public class IdentityViewModel
     {
         [Required]
         public string Name { get; set; }

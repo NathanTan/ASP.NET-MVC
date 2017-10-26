@@ -11,14 +11,14 @@ namespace MVC_Demo.Models
         // GET: Hero/Index
         public ActionResult Index()
         {
-            IdentityModel model = new IdentityModel();
+            IdentityViewModel model = new IdentityViewModel();
             var regions = GetAllRegions();
             
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Submit(IdentityModel model)
+        public ActionResult Submit(IdentityViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -28,7 +28,7 @@ namespace MVC_Demo.Models
         }
 
         [HttpPost]
-        public ActionResult Submit2(IdentityModel model)
+        public ActionResult Submit2(IdentityViewModel model)
         {
             if (!ModelState.IsValid)
             {
