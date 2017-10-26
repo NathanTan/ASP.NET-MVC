@@ -30,15 +30,32 @@ namespace MVC_Demo.Models
 
         [Required]
         [Display(Name="Time Zone")]
-        [DisplayFormat(NullDisplayText = "(null value)")]
         [UIHint("TimeZonesModel")]
         public string Region { get; set; }
 
         public IEnumerable<SelectListItem> PossibleRegions { get; set; } = new List<SelectListItem>() {
             new SelectListItem()
             {
-                Value = "",
-                Text = "Time",
+                Value = "Pacific",
+                Text = "Pacific Time",
+                Selected = false
+            },
+            new SelectListItem()
+            {
+                Value = "Mountain",
+                Text = "Mountain Time",
+                Selected = false
+            },
+            new SelectListItem()
+            {
+                Value = "Central",
+                Text = "Central Time",
+                Selected = false
+            },
+            new SelectListItem()
+            {
+                Value = "Eastern",
+                Text = "Eastern Time",
                 Selected = false
             }
         };
