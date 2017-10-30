@@ -23,6 +23,11 @@ textarea {
     max-width: 280px;
 }
 
-cls{
-    border: 20px dashed green;
+.hero-form {
+    display: inline-block;
+}
+
+.button {
+    margin-top: 15px;
+    float: right;
 }

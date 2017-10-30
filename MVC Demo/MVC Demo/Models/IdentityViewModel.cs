@@ -26,6 +26,7 @@ namespace MVC_Demo.Models
 
         [Required]
         [Range(18, 9999, ErrorMessage = "Must be at least 18 to registar")]
+        [UIHint("Age")]
         public int Age { get; set; }
 
         [Required]
@@ -59,25 +60,6 @@ namespace MVC_Demo.Models
                 Selected = false
             }
         };
-
-        //[Required]
-        //[Display(Name="Time Zone Region")]
-        //public string Region { get; set; }
-
-        //public IEnumerable<SelectListItem> Regions { get; set; }
-    }
-
-    public class TimeZonesModel
-    {
-        public string Region { get; set; }
-
-        public IEnumerable<SelectListItem> Regions { get; set; } = new List<SelectListItem>() {
-            new SelectListItem()
-            {
-                Value = "",
-                Text = "Time",
-                Selected = false
-            }
-        };
+        
     }
 }

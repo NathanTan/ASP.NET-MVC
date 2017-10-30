@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "GenericForm";
 }
+@Styles.Render("~/Content/css")
 
 <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
 
@@ -10,65 +11,69 @@
 <h4>@ViewBag.Message</h4>
 
 <h6>Please enter the following information</h6>
-@using (Html.BeginForm("Submit", "Hero", FormMethod.Post, new { }))
-{
-    <div>
-        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
+<div class="hero-form">
+    @using (Html.BeginForm("Submit", "Hero", FormMethod.Post, new { }))
+    {
+        <div>
+            @Html.LabelFor(m => m.Name, new { @class = "control-label" })
             @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
         </div>
-    </div>
-    <div>
-        @Html.LabelFor(m => m.HeroName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
+
+        <div>
+            @Html.LabelFor(m => m.HeroName, new { @class = "control-label" })
             @Html.TextBoxFor(m => m.HeroName, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.HeroName, null, new { @class = "text-danger" })
         </div>
-    </div>
-    <div>
-        @Html.LabelFor(m => m.OriginCity, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
+
+        <div>
+            @Html.LabelFor(m => m.OriginCity, new { @class = "control-label" })
             @Html.TextBoxFor(m => m.OriginCity, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.OriginCity, null, new { @class = "text-danger" })
         </div>
-    </div>
-    <div>
-        @Html.LabelFor(m => m.SideKickName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
+
+        <div>
+            @Html.LabelFor(m => m.SideKickName, new { @class = "control-label" })
             @Html.TextBoxFor(m => m.SideKickName, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.SideKickName, null, new { @class = "text-danger" })
         </div>
-    </div>
-    <div>
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
+
+        <div>
+            @Html.LabelFor(m => m.Email, new { @class = "control-label" })
             @Html.EditorFor(m => m.Email, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
         </div>
-    </div>
-    <div>
-        @Html.LabelFor(m => m.Age, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.DisplayFor(m => m.Age, new { @class = "form-control" })
-            @Html.TextBoxFor(m => m.Age, new { @class = "form-control" }) <!--Texbox for gives a generic input, but editor for will look at dataannotations to determine what to do-->
+
+        <div>
+            @Html.LabelFor(m => m.Age, new { @class = "control-label" })
+            @*@Html.DisplayFor(m => m.Age, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.Age, new { @class = "form-control" })*@
+            <!--Texbox for gives a generic input, but editor for will look at dataannotations to determine what to do-->
             @Html.EditorFor(m => m.Age, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Age, null, new { @class = "text-danger" })
         </div>
-    </div>
-    <div>
-        @Html.LabelFor(m => m.Region, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
+
+        <div>
+            @Html.LabelFor(m => m.Region, new { @class = "control-label" })
             @Html.EditorFor(m => m.Region, new { @class = "form-control", PossibleRegions = Model.PossibleRegions })
             @Html.ValidationMessageFor(m => m.Region, null, new { @class = "text-danger" })
         </div>
-    </div>
 
-    <input type="submit" class="btn btn-default" value="Submit" />
-}
-<h3>Editor For Model</h3>
-@using (Html.BeginForm("Submit2", "Hero", FormMethod.Post, new { }))
-{
-    @Html.EditorForModel(new { PossibleRegions = Model.PossibleRegions })
-    <input type="submit" class="btn btn-default" value="Submit" />
-}
+        <div class="button">
+        <input type="submit" class="btn btn-default" value="Submit" />
+        </div>
+    }
+</div>
+
+<div style="display: inline-block; width: 200px;"></div>
+
+<div class="hero-form">
+    <h3>Editor For Model</h3>
+    @using (Html.BeginForm("Submit2", "Hero", FormMethod.Post, new { }))
+    {
+        @Html.EditorForModel(new { PossibleRegions = Model.PossibleRegions })
+        <div class="button">
+        <input type="submit" class="btn btn-default" value="Submit" />
+        </div>
+    }
+</div>
