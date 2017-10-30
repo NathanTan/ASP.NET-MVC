@@ -25,7 +25,7 @@ namespace MVC_Demo.Models
         public string Email { get; set; }
 
         [Required]
-        [Range(18, 9999, ErrorMessage = "Must be at least 18 to registar")]
+        [Range(18, 9999, ErrorMessage = "Must be at least 18 to register")]
         [UIHint("Age")]
         public int Age { get; set; }
 
