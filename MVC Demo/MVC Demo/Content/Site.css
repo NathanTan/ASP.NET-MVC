@@ -31,3 +31,7 @@ textarea {
     margin-top: 15px;
     float: right;
 }
+
+.display-label {
+    font-weight: bold;
+}

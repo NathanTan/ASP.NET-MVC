@@ -6,9 +6,9 @@ namespace MVC_Demo.Models
 {
     public class IdentityViewModel
     {
-        [Required]
         public string Name { get; set; }
 
+        [Required]
         [Display(Name = "Hero Name")]
         public string HeroName { get; set; }
 

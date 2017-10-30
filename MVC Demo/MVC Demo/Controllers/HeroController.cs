@@ -21,6 +21,13 @@ namespace MVC_Demo.Models
         {
             if (ModelState.IsValid)
             {
+                if (model.Name == null)
+                    model.Name = "[unspecified]";
+                if (model.OriginCity == null) 
+                    model.OriginCity = "[unspecified]";
+                if (model.SideKickName == null)
+                    model.SideKickName = "[unspecified]";
+
                 return View("Accepted", model);
             }
 
