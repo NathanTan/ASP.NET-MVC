@@ -1,9 +1,0 @@
-﻿
-@model String
-@{
-    IEnumerable<SelectListItem> regions = ViewBag.PossibleRegions;
-}
-
-<div class="dropdown">
-    @Html.DropDownList("", regions, "- Please select your time zone -", new { @class = "form-control" })
-</div>
