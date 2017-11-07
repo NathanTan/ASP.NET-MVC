@@ -7,8 +7,8 @@
 <h6>Please fill out the form below</h6>
 
 <div class="hero-form">
-    @using (Html.BeginForm("Submit", "Hero", FormMethod.Post, new { }))
+    @using (Html.BeginForm())
     {
-
+        <input type="submit" />
     }
 </div>
