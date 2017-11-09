@@ -20,11 +20,6 @@ namespace MVC_Demo.Controllers
         [HttpPost]
         public ActionResult Index(HeroViewModel data)
         {
-            if (!ModelState.IsValid)
-            {
-                Console.WriteLine("Data is not valid");
-            }
-
             return View(data);
         }
     }
