@@ -1,4 +1,6 @@
-﻿
+﻿@using MVC_Demo.Models
+@model HeroViewModel
+ 
 @{
     ViewBag.Title = "Index";
 }
@@ -7,8 +9,65 @@
 <h6>Please fill out the form below</h6>
 
 <div class="hero-form">
+    <h3>Editor For Model</h3>
     @using (Html.BeginForm())
     {
+        @Html.EditorForModel(new { PossibleRegions = Model.PossibleRegions })
+        
+        <input type="submit" />
+
+    }
+</div>
+
+<div style="display: inline-block; width: 200px;"></div>
+
+<div class="hero-form">
+    @using (Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name, null, new { @class = "text-danger" })
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.HeroName, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.HeroName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.HeroName, null, new { @class = "text-danger" })
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.OriginCity, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.OriginCity, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.OriginCity, null, new { @class = "text-danger" })
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.SidekickName, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.SidekickName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.SidekickName, null, new { @class = "text-danger" })
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+            @Html.EditorFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.Age, new { @class = "control-label" })
+            @Html.EditorFor(m => m.Age, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Age, null, new { @class = "text-danger" })
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.Region, new { @class = "control-label" })
+            @Html.EditorFor(m => m.Region, new { @class = "form-control", PossibleRegions = Model.PossibleRegions })
+            @Html.ValidationMessageFor(m => m.Region, null, new { @class = "text-danger" })
+        </div>
+
         <input type="submit" />
     }
 </div>
+
+

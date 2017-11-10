@@ -20,6 +20,10 @@ namespace MVC_Demo.Controllers
         [HttpPost]
         public ActionResult Index(HeroViewModel data)
         {
+            if (ModelState.IsValid)
+            {
+                return View("Accept", data);
+            }
             return View(data);
         }
     }
